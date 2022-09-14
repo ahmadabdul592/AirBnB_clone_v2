@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -e
 
 # generating authors for the project after a commit message has been done
 
