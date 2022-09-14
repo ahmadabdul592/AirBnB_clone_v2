@@ -48,7 +48,7 @@ file { '/data/web_static/shared':
 
 file { '/data/web_static/releases/test/index.html':
   ensure  => 'present',
-  content => "Welcome to The_Masterminds home\n"
+  content => "My_little_house\n"
 } ->
 
 file { '/data/web_static/current':
@@ -75,7 +75,7 @@ file { '/var/www/html/index.html':
 
 file { '/var/www/html/404.html':
   ensure  => 'present',
-  content => "Ceci n'est pas une page\n"
+  content => "Page not found\n"
 } ->
 
 file { '/etc/nginx/sites-available/default':
