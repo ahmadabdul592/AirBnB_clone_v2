@@ -70,7 +70,7 @@ file { '/var/www/html':
 
 file { '/var/www/html/index.html':
   ensure  => 'present',
-  content => "Welcome to The_Masterminds home\n"
+  content => "My little house\n"
 } ->
 
 file { '/var/www/html/404.html':
