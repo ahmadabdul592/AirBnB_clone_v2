@@ -8,6 +8,7 @@ from sqlalchemy import Column, DateTime, String
 
 Base = declarative_base()
 
+
 class BaseModel:
     """A base class for all hbnb models"""
 
@@ -21,11 +22,11 @@ class BaseModel:
         self.created_at = self.updated_at = datetime.utcnow()
         if kwargs:
             for name, value in kwargs.items():
-                    if name == 'created_at' or name == 'updated_at':
-                        value = datetime.strptime(
-                                value, "%Y-%m-%dT%H:%M:%S.%f")
-                    if name != "__class__":
-                        setattr(self, name, value)
+                if name == 'created_at' or name == 'updated_at':
+                    value = datetime.strptime(
+                                    value, "%Y-%m-%dT%H:%M:%S.%f")
+                if name != "__class__":
+                    setattr(self, name, value)
 
     def __str__(self):
         """Returns a string representation of the instance"""
@@ -43,7 +44,8 @@ class BaseModel:
         """Convert instance into dict format"""
         m_dict = {}
         m_dict.update(self.__dict__)
-        m_dict.update({'__class__': (str(type(self)).split('.')[-1]).split('\'')[0]})
+        m_dict.update({'__class__': (str(type(self)).split('.')[-1])
+                      .split('\'')[0]})
         m_dict['created_at'] = self.created_at.isoformat()
         m_dict['updated_at'] = self.updated_at.isoformat()
         m_dict.pop("_sa_instance_state", None)

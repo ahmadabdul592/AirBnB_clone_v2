@@ -7,6 +7,7 @@ from sqlalchemy import ForeignKey
 from sqlalchemy import String
 from sqlalchemy.orm import relationship
 
+
 class City(BaseModel, Base):
     """ The city class, contains name, state ID and places """
     __tablename__ = "cities"

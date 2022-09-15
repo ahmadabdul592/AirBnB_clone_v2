@@ -15,7 +15,7 @@ class State(BaseModel, Base):
     __tablename__ = "states"
     name = Column(String(128), nullable=False)
     cities = relationship("City", backref="state", cascade="delete")
-    
+
     def __init__(self, *args, **kwargs):
         """Initialises state"""
         super().__init__(*args, **kwargs)
@@ -23,7 +23,8 @@ class State(BaseModel, Base):
     if getenv("HBNB_TYPE_STORAGE") != "db":
         @property
         def cities(self):
-            """returns list of City instances with state_id equal to State.id"""
+            """returns list of City instances with state_id
+            equal to State.id"""
             city_instance_list = []
             all_cities = models.storage.all(City)
             for city in all_cities.values():
