@@ -73,7 +73,7 @@ class HBNBCommand(cmd.Cmd):
                     try:
                         value = eval(value)
                     except(SyntaxError, NameError):
-                            continue
+                        continue
                 kwargs[key] = value
 
         if kwargs == {}:
